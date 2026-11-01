@@ -1,0 +1,19 @@
+{
+  "name": "faselhd-vercel-resolver",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "dev": "vercel dev"
+  },
+  "dependencies": {
+    "@sparticuz/chromium": "^141.0.0",
+    "playwright-core": "^1.57.0"
+  },
+  "devDependencies": {
+    "vercel": "^48.0.0"
+  }
+}
