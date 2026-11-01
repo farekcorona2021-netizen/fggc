@@ -1,1 +1,6 @@
-{}
+{
+  "rewrites": [
+    { "source": "/resolve", "destination": "/api/resolve" },
+    { "source": "/resolve/:path*", "destination": "/api/resolve" }
+  ]
+}
