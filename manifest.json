@@ -1,0 +1,27 @@
+{
+  "id": "com.faselhd.nuvio",
+  "version": "1.0.0",
+  "name": "FASELHD",
+  "description": "FASELHD catalog and streams for Nuvio and Stremio-compatible clients.",
+  "resources": [
+    "catalog",
+    { "name": "meta", "types": ["movie", "series"], "idPrefixes": ["faselhd:"] },
+    { "name": "stream", "types": ["movie", "series"], "idPrefixes": ["faselhd:"] }
+  ],
+  "types": ["movie", "series"],
+  "catalogs": [
+    {
+      "type": "movie",
+      "id": "faselhd",
+      "name": "FASELHD",
+      "extra": [{ "name": "search", "isRequired": false }]
+    },
+    {
+      "type": "series",
+      "id": "faselhd-series",
+      "name": "FASELHD Series",
+      "extra": [{ "name": "search", "isRequired": false }]
+    }
+  ],
+  "behaviorHints": { "adult": false }
+}
