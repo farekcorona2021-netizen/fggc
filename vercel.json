@@ -1,6 +1,9 @@
 {
   "rewrites": [
     { "source": "/resolve", "destination": "/api/resolve" },
-    { "source": "/resolve/:path*", "destination": "/api/resolve" }
+    { "source": "/resolve/:path*", "destination": "/api/resolve" },
+    { "source": "/catalog/:path*", "destination": "/api/catalog" },
+    { "source": "/meta/:path*", "destination": "/api/meta" },
+    { "source": "/stream/:path*", "destination": "/api/stream" }
   ]
 }
