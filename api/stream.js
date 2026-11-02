@@ -9,5 +9,18 @@ export default async function handler(req, res) {
   const response = await fetch(`${origin}/api/resolve`, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ url: episodeUrl }) });
   const result = await response.json();
   if (!response.ok || !result.source) return json(res, 200, { streams: [] });
-  return json(res, 200, { streams: [{ name: "FASELHD", title: "Direct stream", url: result.source, behaviorHints: { notWebReady: true, proxyHeaders: { request: result.headers || {} } } }] });
+  const candidates = Array.isArray(result.candidates) && result.candidates.length
+    ? result.candidates
+    : [{ url: result.source, isMaster: true }];
+  return json(res, 200, {
+    streams: candidates.map((candidate, index) => ({
+      name: "FASELHD",
+      title: candidate.isMaster ? "Master stream" : `Stream ${index + 1}`,
+      url: candidate.url,
+      behaviorHints: {
+        notWebReady: true,
+        proxyHeaders: { request: result.headers || {} }
+      }
+    }))
+  });
 }
