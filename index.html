@@ -8,11 +8,27 @@
       body { font-family: system-ui, sans-serif; max-width: 720px; margin: 0 auto; padding: 48px 24px; line-height: 1.6; color: #222; }
       code { background: #f1f1f1; padding: 2px 6px; border-radius: 4px; }
       .ok { color: #087f23; }
+      .install {
+        display: inline-block;
+        margin-top: 16px;
+        padding: 12px 18px;
+        border-radius: 8px;
+        background: #6d4aff;
+        color: white;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .install:hover { background: #5736d6; }
     </style>
   </head>
   <body>
     <h1>FASELHD Resolver</h1>
     <p class="ok">Service is online.</p>
     <p>Use <code>GET /api/resolve</code> to check the service or <code>POST /api/resolve</code> with a JSON body containing an episode <code>url</code>.</p>
+    <a class="install" id="install-link" href="stremio://localhost/manifest.json">Install in Stremio</a>
+    <script>
+      const manifestUrl = `${window.location.origin}/manifest.json`;
+      document.getElementById("install-link").href = `stremio://${manifestUrl.replace(/^https?:\\/\\//, "")}`;
+    </script>
   </body>
 </html>
