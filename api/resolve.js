@@ -1,4 +1,5 @@
 import { resolveFaselhd } from "../lib/faselhd.js";
+import { isAllowedFaselhdUrl } from "../lib/stremio.js";
 
 function send(res, status, body) {
   res.status(status);
@@ -43,6 +44,13 @@ export default async function handler(req, res) {
     return send(res, 400, {
       ok: false,
       error: "Missing episode URL"
+    });
+  }
+
+  if (!isAllowedFaselhdUrl(url)) {
+    return send(res, 400, {
+      ok: false,
+      error: "URL must belong to the configured FASELHD domain"
     });
   }
 
