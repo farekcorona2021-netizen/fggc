@@ -2,9 +2,8 @@
   "rewrites": [
     { "source": "/resolve", "destination": "/api/resolve" },
     { "source": "/resolve/:path*", "destination": "/api/resolve" },
-    { "source": "/catalog/:type/:id.json", "destination": "/api/catalog" },
-    { "source": "/catalog/:type/:id/:extra.json", "destination": "/api/catalog" },
-    { "source": "/meta/:type/:id.json", "destination": "/api/meta" },
-    { "source": "/stream/:type/:id.json", "destination": "/api/stream" }
+    { "source": "/catalog/:path*", "destination": "/api/catalog" },
+    { "source": "/meta/:path*", "destination": "/api/meta" },
+    { "source": "/stream/:path*", "destination": "/api/stream" }
   ]
 }
