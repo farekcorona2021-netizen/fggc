@@ -27,8 +27,8 @@
     <p>Use <code>GET /api/resolve</code> to check the service or <code>POST /api/resolve</code> with a JSON body containing an episode <code>url</code>.</p>
     <a class="install" id="install-link" href="stremio://localhost/manifest.json">Install in Stremio</a>
     <script>
-      const manifestUrl = `${window.location.origin}/manifest.json`;
-      document.getElementById("install-link").href = `stremio://${manifestUrl.replace(/^https?:\\/\\//, "")}`;
+      const addonHost = "fggc-h7fd-farekcorona2021-netizens-projects.vercel.app";
+      document.getElementById("install-link").href = `stremio://${addonHost}/manifest.json`;
     </script>
   </body>
 </html>
